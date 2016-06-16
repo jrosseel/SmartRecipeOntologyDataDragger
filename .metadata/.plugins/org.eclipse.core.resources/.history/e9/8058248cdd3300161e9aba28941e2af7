@@ -1,0 +1,79 @@
+package db2triples;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+
+import net.antidot.semantic.rdf.rdb2rdf.main.Db2triples;
+
+/** This class is responsible for fetching yesterdays recipes from the database,
+ * 	  and then converting them to triples.
+ *  The generator method then stores the triples in a fileLocaction that is passed. */
+public class YesterdaysTriplesRetriever 
+{
+	/** Execute command 
+	 * @see http://stackoverflow.com/questions/19835244/java-program-that-calls-external-program-behaving-asynchronously*/
+	public void retrieveTriples(String ttlLoc, String fileLoc) 
+	{
+		// String command = "/usr/bin/sleep 5";
+	    List<String> command = new ArrayList<String>();
+	    command.add("c:/cygwin/bin/sleep");
+	    command.add("5");
+	    ProcessBuilder pb = new ProcessBuilder(command);
+	    BufferedReader is = null;
+	    try {
+	        System.out.println("Starting command " + command);
+	        Process p = pb.start();
+
+	        int ret = p.waitFor();
+	        is = new BufferedReader(new InputStreamReader(p.getInputStream()));
+	        String line;
+	        while ((line = is.readLine()) != null) {
+	            System.out.println(line);
+	        }
+	        if (ret == 0) {
+	            System.out.println("Command has completed.");
+	            System.exit(ret);
+	        } else {
+	            System.out.println("Command completed with return code " + ret);
+	            System.exit(ret);
+	        }
+	    } catch (Exception e) {
+	        System.out.println("Caught Exception " + e.getMessage()
+	                + " running command " + command);
+	        e.printStackTrace();
+	    } finally {
+	        if (is != null) {
+	            try {
+	                is.close();
+	            } catch (IOException e) {
+	            }
+	        }
+	    }
+	    System.out.println("COMMAND FAILED");
+	    System.exit(1);
+	        
+		DbConnectionConfig conf = new DbConnectionConfig();
+		
+		ArrayList<String> params = new ArrayList<String>();
+		// Set the parameters
+		params.add("-r"); params.add(ttlLoc);
+		params.add("-o"); params.add(fileLoc);
+		params.add("-m"); params.add("r2rml");
+		params.add("-u"); params.add(conf.DB_USER);
+		params.add("-p"); params.add(conf.DB_PASS);
+		params.add("-b"); params.add(conf.DB_NAME);
+		params.add("-l"); params.add(conf.DB_URL);
+		params.add("-i"); params.add(conf.DB_URL + conf.DB_NAME);
+		params.add("-d"); params.add("org.postgresql.Driver");
+		
+		String[] paramArr = new String[params.size()];
+		paramArr = params.toArray(paramArr);
+		
+		// Execute the Db2triples code synchronously. Will return after Db2Triples execution
+		Db2triples.main(paramArr);
+	}
+}

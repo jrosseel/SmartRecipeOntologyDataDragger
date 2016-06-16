@@ -8,7 +8,6 @@
 	<classpathentry kind="lib" path="lib/stardog-client/api/stardog-utils-common-4.1.1.jar"/>
 	<classpathentry kind="lib" path="lib/stardog-client/api/stardog-utils-rdf-4.1.1.jar"/>
 	<classpathentry kind="lib" path="lib/stardog-client/api/stardog-core-shared-4.1.1.jar"/>
-	<classpathentry combineaccessrules="false" kind="src" path="/db2triples-master"/>
 	<classpathentry kind="lib" path="lib/stardog-client/api/aopalliance-1.0.jar"/>
 	<classpathentry kind="lib" path="lib/stardog-client/api/commons-beanutils-1.8.3.jar"/>
 	<classpathentry kind="lib" path="lib/stardog-client/api/commons-codec-1.9.jar"/>

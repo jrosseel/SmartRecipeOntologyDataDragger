@@ -1,4 +1,3 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Delete resource &apos;UseSnarl&apos;" deleteContents="false" description="Delete resource &apos;UseSnarl&apos;" element1="/UseSnarl" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1466084377350"/>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;UseSnarl&apos;" deleteContents="false" description="Delete resource &apos;UseSnarl&apos;" element1="/UseSnarl" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1466084377350"/>&#x0A;<refactoring comment="Delete resource &apos;db2triples-master&apos;" deleteContents="false" description="Delete resource &apos;db2triples-master&apos;" element1="/db2triples-master" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1466093289346"/>
 </session>
