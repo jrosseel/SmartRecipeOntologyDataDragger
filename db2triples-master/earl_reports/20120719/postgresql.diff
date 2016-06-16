@@ -1,0 +1,33 @@
+diff -r postgres-rdb2rdf-ts_20120713/D014-3tables1primarykey1foreignkey/r2rmla.ttl original_rdb2rdf-ts_20120713/D014-3tables1primarykey1foreignkey/r2rmla.ttl
+17c17
+<                     rr:inverseExpression "{\"deptno\"} = cast(substr({\"deptId\"},length('Department')+1) as int)"];
+---
+>                     rr:inverseExpression "{\"deptno\"} = substr({\"deptId\"},length('Department')+1)"];
+diff -r postgres-rdb2rdf-ts_20120713/D014-3tables1primarykey1foreignkey/r2rmlb.ttl original_rdb2rdf-ts_20120713/D014-3tables1primarykey1foreignkey/r2rmlb.ttl
+22c22
+<                     rr:inverseExpression "{\"deptno\"} = cast(substr({deptId},length('Department')+1) as int)" ];
+---
+>                     rr:inverseExpression "{\"deptno\"} = substr({deptId},length('Department')+1)" ];
+diff -r postgres-rdb2rdf-ts_20120713/D014-3tables1primarykey1foreignkey/r2rmlc.ttl original_rdb2rdf-ts_20120713/D014-3tables1primarykey1foreignkey/r2rmlc.ttl
+21c21
+<                     rr:inverseExpression "{\"deptno\"} = cast(substr({deptId},length('Department')+1) as int)"];
+---
+>                     rr:inverseExpression "{\"deptno\"} = substr({deptId},length('Department')+1)"];
+diff -r postgres-rdb2rdf-ts_20120713/D016-1table1primarykey10columns3rowsSQLdatatypes/create.sql original_rdb2rdf-ts_20120713/D016-1table1primarykey10columns3rowsSQLdatatypes/create.sql
+11c11
+< "Photo" BYTEA,
+---
+> "Photo" VARBINARY(200),
+17c17
+< E'\\x89504E470D0A1A0A0000000D49484452000000050000000508060000008D6F26E50000001C4944415408D763F9FFFEBFC37F062005C3201284D031F18258CD04000EF535CBD18E0E1F0000000049454E44AE426082');
+---
+> X'89504E470D0A1A0A0000000D49484452000000050000000508060000008D6F26E50000001C4944415408D763F9FFFEBFC37F062005C3201284D031F18258CD04000EF535CBD18E0E1F0000000049454E44AE426082');
+21c21
+< E'\\x89504E470D0A1A0A0000000D49484452000000050000000508060000008D6F26E50000001C4944415408D763F9FFFF3FC37F062005C3201284D031F18258CD04000EF535CBD18E0E1F0000000049454E44AE426082');
+---
+> X'89504E470D0A1A0A0000000D49484452000000050000000508060000008D6F26E50000001C4944415408D763F9FFFF3FC37F062005C3201284D031F18258CD04000EF535CBD18E0E1F0000000049454E44AE426082');
+25c25
+< E'\\x89504E470D0A1A0A0000000D49484452000000050000000508060000008D6F26E50000001C4944415408D763F9FFFEBFC37F062005C3201284D031F18258CD04000EF535CBD18E0E1F0000000049454E44AE426082');
+---
+> X'89504E470D0A1A0A0000000D49484452000000050000000508060000008D6F26E50000001C4944415408D763F9FFFEBFC37F062005C3201284D031F18258CD04000EF535CBD18E0E1F0000000049454E44AE426082');
+\ Pas de fin de ligne à la fin du fichier.

@@ -1,0 +1,18 @@
+package db2triples;
+
+import java.util.ArrayList;
+
+import net.antidot.semantic.rdf.rdb2rdf.main.Db2triples;
+
+/** This class is responsible for fetching yesterdays recipes from the database,
+ * 	  and then converting them to triples.
+ *  The generator method then stores the triples in a fileLocaction that is passed. */
+public class YesterdaysTriplesRetriever 
+{
+	public void retrieveTriples(String fileLoc) 
+	{
+		String[] params = new ArrayList<String>("","")
+								.toArray();
+		Db2triples.main();
+	}
+}

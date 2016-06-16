@@ -1,0 +1,5 @@
+package stardog;
+
+static final class ConnectionConfig {
+	
+}

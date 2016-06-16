@@ -1,0 +1,42 @@
+2016-06-16 15:39:23,932 [Worker-55] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.antidot:db2triples:1.0.3-SNAPSHOT @ C:\Users\rosse\Documents\Java\openis\db2triples-master\pom.xml.
+2016-06-16 15:39:25,366 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-16 15:39:25,371 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2016-06-16 15:39:25,383 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-16 15:39:25,383 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rosse\Documents\Java\openis\db2triples-master\src\test\resources
+2016-06-16 15:39:26,908 [Worker-56] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.antidot:db2triples:1.0.3-SNAPSHOT @ C:\Users\rosse\Documents\Java\openis\db2triples-master\pom.xml.
+2016-06-16 15:39:28,498 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-16 15:39:28,500 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-06-16 15:39:28,502 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-16 15:39:28,502 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rosse\Documents\Java\openis\db2triples-master\src\test\resources
+2016-06-16 15:39:58,682 [Worker-50] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2016-06-16 15:39:59,232 [Worker-50] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: net.antidot:db2triples:1.0.3-SNAPSHOT @ C:\Users\rosse\Documents\Java\openis\db2triples-master\pom.xml.
+2016-06-16 15:39:59,711 [Worker-50] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /db2triples-master/src/main/java
+2016-06-16 15:39:59,712 [Worker-50] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /db2triples-master/src/main/resources
+2016-06-16 15:39:59,723 [Worker-50] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /db2triples-master/src/test/java
+2016-06-16 15:39:59,950 [Worker-50] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2016-06-16 15:40:01,331 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-16 15:40:01,333 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2016-06-16 15:40:01,350 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-16 15:40:01,350 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rosse\Documents\Java\openis\db2triples-master\src\test\resources
+2016-06-16 15:40:11,694 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-16 15:40:11,703 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2016-06-16 15:40:11,709 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-16 15:40:11,710 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rosse\Documents\Java\openis\db2triples-master\src\test\resources
+2016-06-16 15:40:16,214 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-16 15:40:16,216 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 2 resources
+2016-06-16 15:40:16,218 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-16 15:40:16,218 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rosse\Documents\Java\openis\db2triples-master\src\test\resources
+2016-06-16 15:47:34,120 [Worker-63] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2-sources.jar
+2016-06-16 15:47:34,311 [Worker-63] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/commons-cli/commons-cli/1.2/commons-cli-1.2-sources.jar
+2016-06-16 15:47:34,415 [Worker-63] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for commons-cli:commons-cli:1.2
+2016-06-16 15:47:34,643 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-16 15:47:34,646 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-06-16 15:47:34,651 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-16 15:47:34,654 [Worker-55] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rosse\Documents\Java\openis\db2triples-master\src\test\resources
+2016-06-16 17:32:09,346 [Worker-99] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-repository-api/2.6.10/sesame-repository-api-2.6.10-sources.jar
+2016-06-16 17:32:09,513 [Worker-99] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/openrdf/sesame/sesame-repository-api/2.6.10/sesame-repository-api-2.6.10-sources.jar
+2016-06-16 17:32:09,636 [Worker-99] INFO  o.e.m.j.internal.DownloadSourcesJob - Downloaded sources for org.openrdf.sesame:sesame-repository-api:2.6.10
+2016-06-16 17:32:09,900 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-16 17:32:09,904 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2016-06-16 17:32:09,909 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2016-06-16 17:32:09,910 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rosse\Documents\Java\openis\db2triples-master\src\test\resources

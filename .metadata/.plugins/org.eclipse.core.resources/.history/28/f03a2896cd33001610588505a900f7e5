@@ -1,0 +1,36 @@
+package main;
+
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+
+public class SmartRecipeDataDragger {
+
+	// Kicks of the service that runs every day
+	
+	public static void main(String[] args) {
+		
+		_kickOffService();
+	}
+	
+	/**
+	 * @see: http://stackoverflow.com/questions/20387881/how-to-run-certain-task-every-day-at-a-particular-time-using-scheduledexecutorse */
+	private static void _kickOffService() {
+		LocalDateTime localNow = LocalDateTime.now();
+        ZoneId currentZone = ZoneId.of("America/Los_Angeles");
+        ZonedDateTime zonedNow = ZonedDateTime.of(localNow, currentZone);
+        ZonedDateTime zonedNext5 ;
+        zonedNext5 = zonedNow.withHour(5).withMinute(0).withSecond(0);
+        if(zonedNow.compareTo(zonedNext5) > 0)
+            zonedNext5 = zonedNext5.plusDays(1);
+
+        Duration duration = Duration.between(zonedNow, zonedNext5);
+        long initalDelay = duration.getSeconds();
+
+        ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);            
+        scheduler.scheduleAtFixedRate(new MyRunnableTask(), initalDelay,
+                                      24*60*60, TimeUnit.SECONDS);
+	}
+	
+	
+	
+}

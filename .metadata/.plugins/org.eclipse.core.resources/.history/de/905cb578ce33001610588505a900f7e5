@@ -1,0 +1,13 @@
+package main;
+
+/** Application logic of the SmartRecipeDataDragger. Will first retrieve all the triples.
+ *  Then execute the stardog update.
+ */
+public class SmartRecipeUpdate implements Runnable {
+
+	@Override
+	public void run() {
+		
+	}
+
+}

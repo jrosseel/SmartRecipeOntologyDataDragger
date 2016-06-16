@@ -1,0 +1,35 @@
+package main;
+
+import java.io.FileInputStream;
+
+import org.openrdf.rio.RDFFormat;
+
+import com.complexible.stardog.api.Connection;
+import com.complexible.stardog.api.ConnectionConfiguration;
+
+public class DraggerService {
+
+	public static void main(String[] args) {
+		
+		
+		
+		Connection aCon = ConnectionConfiguration
+							.to("OPENIS")
+							.credentials("admin", "admin")
+							.server("http://localhost:5820")
+							.connect();
+		
+		try{
+			aCon.begin();
+			aCon.remove().io().format(RDFFormat.RDFXML).stream(new FileInputStream("rdf-xml-files\\delete.xml"));
+			aCon.commit();
+		}
+		catch(Exception e) {
+			
+		}
+		finally {
+			aCon.close();
+		}
+	}
+	
+}

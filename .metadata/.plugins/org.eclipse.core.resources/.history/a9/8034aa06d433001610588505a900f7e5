@@ -1,0 +1,113 @@
+@prefix rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>.
+@prefix rr:<http://www.w3.org/ns/r2rml#>.
+@prefix sr:<http://www.smartrecipe.com/ns#>.
+@prefix : <http://example.org/>.
+
+# psql -d nutrient-db -U postgres -f backup_small
+# java -jar db2triples.jar -b nutrition-db -d org.postgresql.Driver -l "jdbc:postgresql://localhost/" -m r2rml -o triples2 -r ../mapping.ttl -u postgres -p admin
+
+<#NutritiveValueQuantityTable>
+	   rr:sqlQuery """SELECT ia.id AS id, ia.ingredient_id as ingredient_id, ia.nutrient_value as quantity, nv.unit as unit,  ia.nutrient_value_id as nutrient_value_id
+	                   FROM ingredient_attribute ia
+	                   JOIN nutrient_value nv
+	                   ON ia.nutrient_value_id = nv.id
+					   """.
+<#NutritiveValueQuantities_TM>
+    rr:logicalTable <#NutritiveValueQuantityTable>;
+    rr:subjectMap [
+        rr:template "http://www.smartrecipe.com/ns/NutritiveValueQuantity/{id}";
+        rr:class sr:NutritiveValueQuantity;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate sr:hasNutrientQuantityUnit;
+        rr:objectMap [ rr:column "unit";];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate sr:hasNutritiveQuantity;
+	      rr:objectMap [ rr:column "quantity";];
+    ];
+    #rr:predicateObjectMap [
+    #	 rr:predicate sr:ingredientId;
+	  #   rr:objectMap [ rr:template "http://www.smartrecipe.com/ns/Ingredient/{ingredient_id}" ];
+    #];
+    rr:predicateObjectMap [
+    	 rr:predicate sr:hasNutritiveValue;
+	     rr:objectMap [ rr:template "http://www.smartrecipe.com/ns/NutritiveValue/{nutrient_value_id}" ];
+    ].
+
+<#NutritiveValues_TM>
+    rr:logicalTable [ rr:tableName "nutrient_value"; ];
+    rr:subjectMap [
+        rr:template "http://www.smartrecipe.com/ns/NutritiveValue/{id}";
+        rr:class sr:NutritiveValue;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate sr:hasNutritiveValueName;
+        rr:objectMap [ rr:column "name"; ];
+    ].
+
+<#Ingredients_TM>
+    rr:logicalTable [ rr:tableName "ingredient"; ];
+    rr:subjectMap [
+        rr:template "http://www.smartrecipe.com/ns/Ingredient/{id}";
+        rr:class sr:Ingredient;
+    ];
+    rr:predicateObjectMap [
+        rr:predicate sr:hasIngredientName;
+        rr:objectMap [ rr:column "name"; ];
+    ];
+    rr:predicateObjectMap [
+        rr:predicate sr:hasNutritiveValueQuantity;
+        rr:objectMap [
+            rr:parentTriplesMap <#NutritiveValueQuantities_TM>;
+            rr:joinCondition [
+                rr:child "id";
+                rr:parent "ingredient_id";
+            ];
+        ];
+    ].
+
+<#IngredientQuantityTableView>
+	   rr:sqlQuery """SELECT id, recipe_id, ingredient_id, amount FROM ingredient_recipe""".
+<#IngredientQuantity_TM>
+   rr:logicalTable <#IngredientQuantityTableView>;
+   rr:subjectMap [
+	    rr:template "http://www.smartrecipe.com/ns/IngredientQuantity/{id}";
+	    rr:class sr:IngredientQuantity;
+   ];
+   rr:predicateObjectMap [
+      rr:predicate sr:hasIngredient;
+      rr:objectMap [ rr:template "http://www.smartrecipe.com/ns/Ingredient/{ingredient_id}" ];
+   ];
+   rr:predicateObjectMap [
+	    rr:predicate sr:hasQuantityUnit;
+	    rr:objectMap [ rr:constant "gr"; ];
+   ];
+   rr:predicateObjectMap [
+	    rr:predicate sr:hasIngredientQuantity;
+      rr:objectMap [ rr:column "amount"; ];
+   ].
+
+<#RecipesTableView>
+	rr:sqlQuery """SELECT id, name FROM recipe""".
+<#Recipes_TM>
+    rr:logicalTable <#RecipesTableView>;
+    rr:subjectMap [
+        rr:template "http://www.smartrecipe.com/ns/Recipe/{id}";
+        rr:class sr:Recipe;
+    ];
+    rr:predicateObjectMap [
+       rr:predicate sr:resultsIn;
+       rr:objectMap [ rr:template "http://www.smartrecipe.com/ns/Food/{id}" ];
+    ].
+
+<#Food_TM>
+    rr:logicalTable <#RecipesTableView>;
+    rr:subjectMap [
+        rr:template "http://www.smartrecipe.com/ns/Food/{id}";
+        rr:class sr:Recipe;
+    ];
+  	rr:predicateObjectMap [
+  	   rr:predicate sr:hasRecipeName;
+  	   rr:objectMap [ rr:column "name"; ];
+  	].

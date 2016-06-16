@@ -1,0 +1,19 @@
+package main;
+
+/** Application logic of the SmartRecipeDataDragger. Will first retrieve all the triples.
+ *  Then execute the stardog update.
+ */
+public class SmartRecipeUpdate implements Runnable {
+	
+	private final String FILE_PREFIX = "smartrecipedata_";
+	private String fileLoc;
+	
+	@Override
+	public void run() {
+		fileLoc = new StringBuilder(FILE_PREFIX)
+						.append()
+		
+		
+	}
+
+}

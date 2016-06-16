@@ -1,0 +1,10 @@
+package stardog;
+
+final class ConnectionConfig {
+	public final String DB_NAME = "OPENIS";
+	
+	public final String ADMIN_NAME = "admin";
+	public final String ADMIN_PASS = "admin";
+	
+	public final String SERVER_ADDRESS = "http://localhost:5820";
+}

@@ -1,0 +1,22 @@
+diff -r mysql-rdb2rdf-ts_20120713//D014-3tables1primarykey1foreignkey/create.sql original_rdb2rdf-ts_20120713//D014-3tables1primarykey1foreignkey/create.sql
+11,13c11,12
+< 	  "deptno" INTEGER, 
+< 	  "etype" VARCHAR(30),
+< 	  FOREIGN KEY("deptno") REFERENCES "DEPT" ("deptno"));
+---
+> 	  "deptno" INTEGER REFERENCES "DEPT" ("deptno"),
+> 	  "etype" VARCHAR(30));
+diff -r mysql-rdb2rdf-ts_20120713//D014-3tables1primarykey1foreignkey/r2rmlb.ttl original_rdb2rdf-ts_20120713//D014-3tables1primarykey1foreignkey/r2rmlb.ttl
+14c14
+<        SELECT ('Department' || Cast("deptno" As Char)) AS deptId
+---
+>        SELECT ('Department' || "deptno") AS deptId
+52c52
+<        SELECT ('http://example.com/emp/' || Cast("empno" As Char)) AS empURI
+---
+>        SELECT ('http://example.com/emp/' || "empno") AS empURI
+diff -r mysql-rdb2rdf-ts_20120713//D014-3tables1primarykey1foreignkey/r2rmlc.ttl original_rdb2rdf-ts_20120713//D014-3tables1primarykey1foreignkey/r2rmlc.ttl
+13c13
+<        Select ('Department' || Cast("deptno" As Char)) AS deptId
+---
+>        Select ('Department' || "deptno") AS deptId

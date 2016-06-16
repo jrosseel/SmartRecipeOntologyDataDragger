@@ -1,0 +1,40 @@
+package main;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import org.openrdf.rio.RDFFormat;
+
+import com.complexible.stardog.api.Connection;
+import com.complexible.stardog.api.ConnectionConfiguration;
+
+public class DraggerService {
+
+	public static void main(String[] args) {
+		
+		
+		
+		Connection aCon = ConnectionConfiguration
+							.to("OPENIS")
+							.credentials("admin", "admin")
+							.server("http://localhost:5820")
+							.connect();
+		
+		try{
+			aCon.begin();
+			aCon.remove()
+				.io()
+				.format(RDFFormat.RDFXML)
+				.stream(new FileInputStream("rdf-xml-files\\delete.xml"));
+			aCon.add().io().format(RDFFormat.RDFXML).stream(new FileInputStream("rdf-xml-files\\add.xml"));
+			aCon.commit();
+		}
+		catch(StardogException | FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		finally {
+			aCon.close();
+		}
+	}
+	
+}

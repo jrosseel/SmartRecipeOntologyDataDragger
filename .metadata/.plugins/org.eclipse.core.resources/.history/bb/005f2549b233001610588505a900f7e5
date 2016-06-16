@@ -1,0 +1,21 @@
+package main;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import org.openrdf.rio.RDFFormat;
+
+import com.complexible.stardog.StardogException;
+import com.complexible.stardog.api.Connection;
+import com.complexible.stardog.api.ConnectionConfiguration;
+
+public class DraggerService {
+
+	public static void main(String[] args) {
+		
+		
+		
+		
+	}
+	
+}

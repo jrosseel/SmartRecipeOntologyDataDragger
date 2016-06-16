@@ -1,0 +1,10 @@
+package main;
+
+public class SmartRecipeUpdate implements Runnable {
+
+	@Override
+	public void run() {
+		
+	}
+
+}

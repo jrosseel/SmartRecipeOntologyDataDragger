@@ -1,0 +1,34 @@
+@prefix test: <http://www.w3.org/2006/03/test-description#> .
+@prefix dcterms: <http://purl.org/dc/elements/1.1/> .
+@prefix rdb2rdftest: <http://purl.org/NET/rdb2rdf-test#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix r2rml: <http://www.w3.org/ns/r2rml#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@base <http://mappingpedia.org/rdb2rdf/tc/> .
+
+<ts> a rdb2rdftest:TestSuite;
+	dcterms:title "Test Suite for R2RML and Direct Mapping" ;
+	dcterms:identifier "TS-01" ;
+	rdb2rdftest:workingDirectory "/home/lm/git/db2triples/src/test/resources/rdb2rdf-ts_20120713" .
+	
+<db2triples>
+        a doap:Project ;
+        doap:name "db2triples" ;
+        doap:homepage <https://github.com/antidot/db2triples>  ;
+        doap:programming-language "Java"  ;
+        doap:developer <https://github.com/jhomo> ;        
+        doap:developer <https://github.com/lmazuel> ;
+        rdb2rdftest:dbms r2rml:PostgreSQL ;
+        rdb2rdftest:implementsDirectMapping true ;
+        rdb2rdftest:implementsR2RML true .
+        
+<https://github.com/jhomo>
+	a foaf:Person ;
+	foaf:mbox <mailto:jhomo@antidot.net> ;
+	foaf:name "Julien Homo" .
+
+<https://github.com/lmazuel>
+	a foaf:Person ;
+	foaf:mbox <mailto:lmazuel@antidot.net> ;
+	foaf:name "Laurent Mazuel" .
+         

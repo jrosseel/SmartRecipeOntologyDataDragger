@@ -1,0 +1,5 @@
+package stardog;
+
+internal class ConnectionConfig {
+
+}

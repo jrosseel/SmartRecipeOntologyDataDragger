@@ -1,0 +1,42 @@
+package stardog;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+
+import org.openrdf.rio.RDFFormat;
+
+import com.complexible.stardog.StardogException;
+import com.complexible.stardog.api.Connection;
+import com.complexible.stardog.api.ConnectionConfiguration;
+
+public class UpdateStardogDb {
+
+	public boolean updateFromFile(String fileName) {
+		Connection aCon = null;
+		
+		try {
+			aCon = CreateServerConnection();ConnectionConfiguration
+					.to("OPENIS")
+					.credentials("admin", "admin")
+					.server("http://localhost:5820")
+					.connect();
+			
+			aCon.begin();
+			aCon.add()
+				.io()
+				.format(RDFFormat.RDFXML)
+				.stream(new FileInputStream("rdf-xml-files\\add.xml"));
+			aCon.commit();
+			
+			return true;
+		}
+		catch(StardogException | FileNotFoundException e) {
+			e.printStackTrace();
+			return false;
+		}
+		finally {
+			if(aCon != null)
+				aCon.close();
+		}
+	}
+}

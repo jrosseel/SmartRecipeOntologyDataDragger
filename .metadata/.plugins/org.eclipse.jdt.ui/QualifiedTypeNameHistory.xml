@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.complexible.stardog.api.Connection"/>
+<fullyQualifiedTypeName name="com.complexible.stardog.api.ConnectionConfiguration"/>
+<fullyQualifiedTypeName name="org.openrdf.rio.RDFFormat"/>
+<fullyQualifiedTypeName name="com.complexible.stardog.StardogException"/>
+<fullyQualifiedTypeName name="net.antidot.semantic.rdf.rdb2rdf.main.Db2triples"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="db2triples.DbConnectionConfig"/>
+<fullyQualifiedTypeName name="java.time.ZoneId"/>
+<fullyQualifiedTypeName name="java.time.ZonedDateTime"/>
+<fullyQualifiedTypeName name="java.time.Duration"/>
+<fullyQualifiedTypeName name="java.util.concurrent.ScheduledExecutorService"/>
+<fullyQualifiedTypeName name="java.util.concurrent.Executors"/>
+<fullyQualifiedTypeName name="java.util.concurrent.TimeUnit"/>
+<fullyQualifiedTypeName name="java.lang.StringBuilder"/>
+<fullyQualifiedTypeName name="java.time.LocalDateTime"/>
+<fullyQualifiedTypeName name="java.time.LocalDate"/>
+<fullyQualifiedTypeName name="db2triples.YesterdaysTriplesRetriever"/>
+<fullyQualifiedTypeName name="stardog.UpdateStardogDb"/>
+<fullyQualifiedTypeName name="main.SmartRecipeDataDragger"/>
+<fullyQualifiedTypeName name="main.SmartRecipeUpdate"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Array"/>
+</qualifiedTypeNameHistroy>

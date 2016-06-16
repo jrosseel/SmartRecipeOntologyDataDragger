@@ -1,0 +1,27 @@
+package main;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+/** Application logic of the SmartRecipeDataDragger. Will first retrieve all the triples.
+ *  Then execute the stardog update.
+ */
+public class SmartRecipeUpdate implements Runnable {
+	
+	private final String FILE_PREFIX = "smartrecipedata";
+	private final String FILE_POSTFIX = ".ttl";
+	private String fileLoc;
+	
+	@Override
+	public void run() {
+		LocalDate date = LocalDateTime.now().toLocalDate();
+		
+		fileLoc = new StringBuilder(FILE_PREFIX)
+						.append(date.getDayOfYear())
+						.append("_")
+						.append(date.getDayOfYear())
+		
+		
+	}
+
+}

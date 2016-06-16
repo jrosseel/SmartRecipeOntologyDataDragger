@@ -1,0 +1,11 @@
+package db2triples;
+
+/** This class is responsible for fetching yesterdays recipes from the database,
+ * 	  and then converting them to triples.
+ *  The generator method then stores the triples in a fileLocaction that is passed. */
+public class YesterdaysTriplesRetriever {
+
+	public void retrieveTriples(string fileLoc) {
+		
+	}
+}
