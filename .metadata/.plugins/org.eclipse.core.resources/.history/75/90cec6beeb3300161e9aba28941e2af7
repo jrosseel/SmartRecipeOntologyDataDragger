@@ -1,6 +1,10 @@
 package db2triples;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 
 /** This class is responsible for fetching yesterdays recipes from the database,
  * 	  and then converting them to triples.
@@ -11,12 +15,11 @@ public class YesterdaysTriplesRetriever
 	 * @see http://stackoverflow.com/questions/19835244/java-program-that-calls-external-program-behaving-asynchronously*/
 	public void retrieveTriples(String ttlLoc, String fileLoc, String baseFolder) 
 	{
-		String command = _createCommand(ttlLoc, fileLoc, baseFolder);
+		List<String> command = _createCommand(ttlLoc, fileLoc, baseFolder);
 		
         Runtime rt = Runtime.getRuntime();
         try {
-        	System.out.println("Executing " + command);
-			Process pr = rt.exec(command);
+			Process pr = rt.exec("java -jar map.jar time.rel test.txt debug");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -25,7 +28,7 @@ public class YesterdaysTriplesRetriever
 	}
 
 	// Creates the cmd command to execute
-	private String _createCommand(String ttlLoc, String fileLoc, String baseFolder) 
+	private List<String> _createCommand(String ttlLoc, String fileLoc, String baseFolder) 
 	{
 		DbConnectionConfig conf = new DbConnectionConfig();
 		

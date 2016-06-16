@@ -12,15 +12,16 @@ import stardog.UpdateStardogDb;
 public class SmartRecipeUpdate implements Runnable {
 	private final String BASE_FOLDER = "C:/Users/rosse/Documents/Java/openis";
 	
-	private final String INPUT_FILE = BASE_FOLDER + "/SmartRecipeDataDragger/retrieverecipesofday.ttl";
-	private final String OUTPUT_PREFIX = BASE_FOLDER + "/output/smartrecipedata";
-	private final String OUTPUT_POSTFIX = ".nt";
+	private final String INPUT_FILE = "/SmartRecipeDataDragger/retrieverecipesofday.ttl";
+	
+	private final String FILE_PREFIX = "smartrecipedata";
+	private final String FILE_POSTFIX = ".nt";
 	
 	@Override
 	public void run() {
 		String outputLoc = _generateTodaysFileLoc();
 		
-		new YesterdaysTriplesRetriever().retrieveTriples(INPUT_FILE, outputLoc, BASE_FOLDER);
+		new YesterdaysTriplesRetriever().retrieveTriples(INPUT_FILE, outputLoc);
 		new UpdateStardogDb().updateFromFile(outputLoc);
 	}
 
@@ -28,10 +29,10 @@ public class SmartRecipeUpdate implements Runnable {
 	private String _generateTodaysFileLoc() {
 		LocalDate date = LocalDateTime.now().toLocalDate();
 		
-		return new StringBuilder(OUTPUT_PREFIX)
+		return new StringBuilder(FILE_PREFIX)
 						.append("_").append(date.getYear())
-						.append("_").append(date.getDayOfYear() - 1)
-						.append(OUTPUT_POSTFIX)
+						.append("_").append(date.getDayOfYear())
+						.append(FILE_POSTFIX)
 						.toString();
 	}
 }

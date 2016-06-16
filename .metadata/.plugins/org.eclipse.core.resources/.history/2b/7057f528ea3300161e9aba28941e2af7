@@ -20,7 +20,7 @@ public class SmartRecipeUpdate implements Runnable {
 	public void run() {
 		String outputLoc = _generateTodaysFileLoc();
 		
-		new YesterdaysTriplesRetriever().retrieveTriples(INPUT_FILE, outputLoc, BASE_FOLDER);
+		new YesterdaysTriplesRetriever().retrieveTriples(INPUT_FILE, outputLoc);
 		new UpdateStardogDb().updateFromFile(outputLoc);
 	}
 

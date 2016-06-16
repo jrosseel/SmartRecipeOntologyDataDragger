@@ -18,7 +18,7 @@
 	                  		ON r.id = rd.recipe_id
 	                  	JOIN diet d
 	                  		ON rd.diet_id = d.id
-	   				  WHERE d.date = TIMESTAMP 'yesterday'""".
+	   				  WHERE d.date > TIMESTAMP 'yesterday'""".
 <#IngredientQuantity_TM>
    rr:logicalTable <#IngredientQuantityTableView>;
    rr:subjectMap [
